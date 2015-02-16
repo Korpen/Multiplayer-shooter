@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <meta charset="utf-8"/></head>
+  <body>
+    <span id="leftpanel">
+      <div class="HPholder">
+        <p class="playername" onclick="SetP1Name()">
+          <span id="playeronename">
+            Player 1
+          </span><br>
+          <span class="smalltext">
+            Change name
+          </span>
+        </p>
+        <div id="p1HP" class="hitanim"></div>
+      </div>
+      <div class="clicktext">
+        <p class="clickable" onclick="ShowScoreboard()">Scoreboard</p>
+        <p class="clickable" onclick="ShowControls()">Setup</p>
+      </div>
+    </span>
+    <canvas id="canvas" height="600" width="600"></canvas>
+    <span id="rightpanel">
+      <div class="HPholder">
+        <p class="playername" onclick="SetP2Name()">
+          <span id="playertwoname">
+            Player 2
+          </span><br>
+          <span class="smalltext">
+            Change name
+          </span>
+        </p>
+        <div id="p2HP" class="hitanim"></div>
+      </div>
+      <div class="clicktext">
+        <p class="clickable" id="musicp" onclick="MusicMute()">Music: on</p>
+        <p class="clickable" id="sfxp" onclick="SFXMute()">SFX: on</p>
+      </div>
+    </span>
+    <script src="js/variables.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/gameloop.js"></script>
+    <script src="js/sound.js"></script>
+    <script src="js/misc.js"></script>
+  </body>
+</html>
