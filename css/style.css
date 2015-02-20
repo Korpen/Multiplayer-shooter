@@ -1,5 +1,5 @@
 html{
-  background-image: url('graphics/page_background.png');
+  background-image: url('../graphics/page_background.png');
   background-size: 100% auto;
   background-position: 0px, 0px;
   background-repeat: no-repeat;
@@ -106,5 +106,5 @@ p{
 .hitanim.anim{
   background-repeat:no-repeat;
   background-position:-7px 105%;
-  background-image:url('graphics/explosion.png');
+  background-image:url('../graphics/explosion.png');
 }
