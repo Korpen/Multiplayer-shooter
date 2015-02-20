@@ -1,7 +1,7 @@
 function PlayerOneShoot(){
   if (Sound.SFX){
     var soundfx = new Audio();
-    soundfx.src = 'sounds/deagle.ogg';
+    soundfx.src = 'audio/deagle.ogg';
     soundfx.play();
   }
 }
@@ -9,7 +9,7 @@ function PlayerOneShoot(){
 function PlayerTwoShoot(){
   if (Sound.SFX){
     var soundfx = new Audio();
-    soundfx.src = 'sounds/glock18.ogg';
+    soundfx.src = 'audio/glock18.ogg';
     soundfx.play();
   }
 }
@@ -17,7 +17,7 @@ function PlayerTwoShoot(){
 function PlayerOneHurt(){
   if (Sound.SFX){
     var soundfx = new Audio();
-    soundfx.src = 'sounds/hurt1.ogg';
+    soundfx.src = 'audio/hurt1.ogg';
     soundfx.play();
   }
 }
@@ -25,7 +25,7 @@ function PlayerOneHurt(){
 function PlayerTwoHurt(){
   if (Sound.SFX){
     var soundfx = new Audio();
-    soundfx.src = 'sounds/hurt2.ogg';
+    soundfx.src = 'audio/hurt2.ogg';
     soundfx.play();
   }
 }
@@ -42,11 +42,11 @@ function MuteMusic(InputVar){
 }
 
 var music = new Audio();
-music.src = 'sounds/music_background.ogg';
+music.src = 'audio/music_background.ogg';
 
 function PlayMusic(){
   music = new Audio();
-  music.src = 'sounds/music_background.ogg';
+  music.src = 'audio/music_background.ogg';
   music.play();
   if (Sound.Music == false){
     music.muted = true;
