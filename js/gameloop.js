@@ -25,37 +25,37 @@ function renderfunc(){
         }
         break;
       case 37:
-        Player1.Left = true;
+        Player2.Left = true;
         break;
       case 39:
-        Player1.Right = true;
+        Player2.Right = true;
         break;
       case 38:
-        Player1.Up = true;
+        Player2.Up = true;
         break;
       case 40:
-        Player1.Down = true;
+        Player2.Down = true;
         break;
       case 190:
-        if (!Player1.IsShooting && Player1.HP > 0){
-          Player1.IsShooting = true;
+        if (!Player2.IsShooting && Player2.HP > 0){
+          Player2.IsShooting = true;
         }
         break;
       case 87:
-        Player2.Up = true;
+        Player1.Up = true;
         break;
       case 65:
-        Player2.Left = true;
+        Player1.Left = true;
         break;
       case 83:
-        Player2.Down = true;
+        Player1.Down = true;
         break;
       case 68:
-        Player2.Right = true;
+        Player1.Right = true;
         break;
-      case 84:
-        if (!Player2.IsShooting && Player2.HP > 0){
-          Player2.IsShooting = true;
+      case 81:
+        if (!Player1.IsShooting && Player1.HP > 0){
+          Player1.IsShooting = true;
         }
         break;
       default:
@@ -70,34 +70,34 @@ function renderfunc(){
 
     switch(event.keyCode){
       case 37:
-        Player1.Left = false;
-        break;
-      case 39:
-        Player1.Right = false;
-        break;
-      case 38:
-        Player1.Up = false;
-        break;
-      case 40:
-        Player1.Down = false;
-        break;
-      case 190:
-        Player1.IsShooting = false;
-        break;
-      case 87:
-        Player2.Up = false;
-        break;
-      case 65:
         Player2.Left = false;
         break;
-      case 83:
-        Player2.Down = false;
-        break;
-      case 68:
+      case 39:
         Player2.Right = false;
         break;
-      case 84:
-          Player2.IsShooting = false;
+      case 38:
+        Player2.Up = false;
+        break;
+      case 40:
+        Player2.Down = false;
+        break;
+      case 190:
+        Player2.IsShooting = false;
+        break;
+      case 87:
+        Player1.Up = false;
+        break;
+      case 65:
+        Player1.Left = false;
+        break;
+      case 83:
+        Player1.Down = false;
+        break;
+      case 68:
+        Player1.Right = false;
+        break;
+      case 81:
+          Player1.IsShooting = false;
         break;
       default:
         return;
