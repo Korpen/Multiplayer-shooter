@@ -48,6 +48,45 @@ function PrintWinner(PlayerNum){
   ctx.strokeText("Press enter to play again",300,300);
 }
 
+function ClearMap(){
+  ctx.save();
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.clearRect(0,0,600,600);
+  ctx.restore();
+}
+
+function DrawMap(){
+  if (!ShouldFilterImage){
+    var img = new Image();
+    img.src = 'graphics/map_background.png';
+    ctx.drawImage(img,0,0,600,600);
+  }
+
+  var obstacle1 = new Image();
+  obstacle1.src = 'graphics/obstacle_vertical.png';
+  ctx.drawImage(obstacle1,
+                Obstacle1.Left,Obstacle1.Up,
+                Obstacle1.Width,Obstacle1.Height);
+
+  var obstacle2 = new Image();
+  obstacle2.src = 'graphics/obstacle_vertical.png';
+  ctx.drawImage(obstacle2,
+                Obstacle2.Left,Obstacle2.Up,
+                Obstacle2.Width,Obstacle2.Height);
+
+  var obstacle3 = new Image();
+  obstacle3.src = 'graphics/obstacle_horizontal.png';
+  ctx.drawImage(obstacle3,
+                Obstacle3.Left,Obstacle3.Up,
+                Obstacle3.Width,Obstacle3.Height);
+
+  var obstacle4 = new Image();
+  obstacle4.src = 'graphics/obstacle_horizontal.png';
+  ctx.drawImage(obstacle4,
+                Obstacle4.Left,Obstacle4.Up,
+                Obstacle4.Width,Obstacle4.Height);
+}
+
 function DrawPlayer1(){
   var player1 = new Image();
   player1.src = 'graphics/swe_char.png';
@@ -267,6 +306,33 @@ function RemoveBullets(){
   for (var i = Bullets.length-1; i >= 0; i--){
     if (Bullets[i].Remove){
       Bullets.splice(i,1);
+    }
+  }
+}
+
+function CheckWinner(){
+  if (Player1.HP < 1 && Player2.HP < 1)
+  {
+    PrintWinner(0);
+    if (!WinnerAdded){
+      Scoreboard[Scoreboard.length] = "Oavgjort";
+      WinnerAdded = true;
+    }
+  }
+  else if (Player1.HP < 1)
+  {
+    PrintWinner(2);
+    if (!WinnerAdded){
+      Scoreboard[Scoreboard.length] = Player2.Name;
+      WinnerAdded = true;
+    }
+  }
+  else if (Player2.HP < 1)
+  {
+    PrintWinner(1);
+    if (!WinnerAdded){
+      Scoreboard[Scoreboard.length] = Player1.Name;
+      WinnerAdded = true;
     }
   }
 }
